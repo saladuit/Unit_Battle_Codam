@@ -6,41 +6,48 @@
 #    By: saladuit <safoh@student.codam.nl>            +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/04/13 21:33:38 by saladuit      #+#    #+#                  #
-#    Updated: 2022/05/26 15:37:42 by safoh            ###   ########.fr        #
+#    Updated: 2022/05/26 19:16:54 by safoh            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-include makerc/main.mk
-include makerc/srcs.mk
+include makerc/files.mk
 include makerc/colours.mk
-include makerc/unit_test.mk
-include makerc/headers.mk
 
-PROJECT			:=	Unit-Battle
-NAME			:=	bowling_game
+PROJECT				:=	Unit-Battle
+NAME				:=	bowling_game
 
-CC				:=	gcc
-RM				:=	rm -rfv
-CFLAGS			=	-Wall -Wextra -Werror $(if $(DEBUG), -g) \
+MAIN 				:= main.c
+SRCS				=
+UNIT_SRCS			=	unit_test.c
+
+
+CC					:=	gcc
+RM					:=	rm -rfv
+
+CFLAGS				=	-Wall -Wextra -Werror $(if $(DEBUG), -g) \
 					$(if $(FSAN), -fsanitize=address -g) \
-					$(if $(COV), -g --coverage)
 
-SRC_DIR			:=	./src
-BUILD_DIR		:=	./build
-OBJS			=	$(addprefix $(BUILD_DIR)/, $(SRCS:%.c=%.o))
-MAIN_OBJ		=	$(addprefix $(BUILD_DIR)/, $(MAIN:%.c=%.o))
+SRC_DIR				:=	src/
+BUILD_DIR			:=	build/
+HEADERS_DIR			:=	include/
+MAIN_OBJ			=	$(addprefix $(BUILD_DIR)/, $(MAIN:%.c=%.o))
+OBJS				=	$(addprefix $(BUILD_DIR), $(SRCS:%.c=%.o))
 
 
-INCLUDE_FLAGS	:= $(addprefix -I, $(sort $(dir $(HEADERS))))
+UNIT_DIR			:=	unit_test/$(HEADERS_DIR)
+UNIT_HEADERS		:=	$(UNIT_DIR)unit_test.h
+HEADERS				:=	$(HEADERS_DIR)bowling_game.h
+INCLUDE_FLAGS		:= $(addprefix -I, $(sort $(dir $(HEADERS))))
 
-UNIT_TEST		:=	unit-test
-UNIT_DIR		:= ./unit_test
-UNIT_SRCS_DIR	:=	$(UNIT_DIR)/src/
 
-UNIT_LFLAGS		:=	-lcriterion
-UNIT_OBJS		=	$(UNIT_SRCS:.c=.o)
-UNIT_INCLUDE_FLAGS	:= $(addprefix -I, $(sort $(dir $(UNIT_HEADERS)))) $(INCLUDE_FLAGS)
- COVERAGE	=	$(SRCS:.c=.gcda)	\
+UNIT_TEST			:=	unit-test
+UNIT_LFLAGS			:=	-lcriterion
+
+UNIT_DIR			:= unit_test/
+UNIT_SRCS_DIR		:=	$(UNIT_DIR)$(SRC_DIR)
+UNIT_OBJS			=	$(UNIT_SRCS:.c=.o)
+UNIT_INCLUDE_FLAGS	:=	$(addprefix -I, $(sort $(dir $(UNIT_HEADERS)))) $(INCLUDE_FLAGS)
+COVERAGE			=	$(SRCS:.c=.gcda)	\
 				$(SRCS:.c=.gcno)	\
 				$(MAIN:.c=.gcda)	\
 				$(MAIN:.c=.gcno)	\
@@ -55,7 +62,7 @@ $(NAME): $(OBJS) $(MAIN_OBJ)
 	$(CC) $(CFLAGS) $^ $(INCLUDE_FLAGS) -o $(NAME)
 	@printf "$(BLUE_FG)$(NAME)$(RESET_COLOR) created\n"
 
-$(BUILD_DIR)/%.o: $(SRC_DIR)/%.c $(HEADERS)
+$(BUILD_DIR)%.o: $(SRC_DIR)%.c $(HEADERS)
 	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) $(INCLUDE_FLAGS) $(INCLUDES) -c $< -o $@
 
@@ -78,10 +85,12 @@ fclean: clean
 re: fclean
 	$(MAKE)
 
-tests_run:
-	export LIBRARY_PATH="${PWD}/criterion:${LIBRARY_PATH}"
-	$(MAKE) COV=1
-	$(CC) $(CFLAGS) $(OBJS) $(addprefix $(UNIT_SRCS_DIR)/, $(UNIT_SRCS)) -o $(UNIT_TEST) $(UNIT_INCLUDE_FLAGS) $(UNIT_LFLAGS)
+env:
+	export LIBRARY_PATH=/sgoinfre/criterion/lib:${LIBRARY_PATH}
+	export C_INCLUDE_PATH=/sgoinfre/criterion/include:${C_INCLUDE_PATH}
+tests_run: CFLAGS += --coverage
+tests_run: $(OBJS) env
+	$(CC) $(CFLAGS) $(OBJS) $(addprefix $(UNIT_SRCS_DIR), $(UNIT_SRCS)) -o $(UNIT_TEST) $(UNIT_INCLUDE_FLAGS) $(UNIT_LFLAGS)
 	./$(UNIT_TEST) -j0
 
 coverage:
@@ -90,4 +99,4 @@ coverage:
 re_tests: fclean
 	$(MAKE) tests_run
 
-.PHONY: all clean fclean re tests_run debug fsan coverage
+.PHONY: all clean fclean re tests_run debug fsan coverage env
