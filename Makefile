@@ -6,14 +6,14 @@
 #    By: saladuit <safoh@student.codam.nl>            +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/04/13 21:33:38 by saladuit      #+#    #+#                  #
-#    Updated: 2022/05/26 15:15:47 by safoh            ###   ########.fr        #
+#    Updated: 2022/05/26 15:37:42 by safoh            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 include makerc/main.mk
 include makerc/srcs.mk
 include makerc/colours.mk
-include makerc/unit_srcs.mk
+include makerc/unit_test.mk
 include makerc/headers.mk
 
 PROJECT			:=	Unit-Battle
@@ -32,7 +32,6 @@ MAIN_OBJ		=	$(addprefix $(BUILD_DIR)/, $(MAIN:%.c=%.o))
 
 
 INCLUDE_FLAGS	:= $(addprefix -I, $(sort $(dir $(HEADERS))))
-LIB_FLAGS		:= $(addprefix -L, $(sort $(dir $(USER_LIBS))))
 
 UNIT_TEST		:=	unit-test
 UNIT_DIR		:= ./unit_test
@@ -53,7 +52,7 @@ all: $(NAME)
 $(NAME): SHELL := /bin/bash
 
 $(NAME): $(OBJS) $(MAIN_OBJ)
-	$(CC) $(CFLAGS) $^ $(INCLUDE_FLAGS) $(LIB_FLAGS) -o $(NAME)
+	$(CC) $(CFLAGS) $^ $(INCLUDE_FLAGS) -o $(NAME)
 	@printf "$(BLUE_FG)$(NAME)$(RESET_COLOR) created\n"
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c $(HEADERS)
@@ -88,6 +87,7 @@ tests_run:
 coverage:
 	gcov $(SRCS)
 
-re_tests: fclean tests_run
+re_tests: fclean
+	$(MAKE) tests_run
 
 .PHONY: all clean fclean re tests_run debug fsan coverage
