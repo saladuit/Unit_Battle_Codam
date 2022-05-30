@@ -47,7 +47,7 @@ The code will be graded on a mix of coverage
 
 The projects with the best scores will be graded by nicolas and a winner will be picked
 
-## Usage
+## Setup
 Run the following command before starting your project or add these commands to your .zsh or .bashrc
 ```console
 	export LIBRARY_PATH=/sgoinfre/criterion_test/.brew/lib:${LIBRARY_PATH}
@@ -57,6 +57,7 @@ Alternatively run the bash script inside the folder
 ```console
 	bash environment.sh
 ```
+## Usage
 Compile the project
 ```console
 make;
