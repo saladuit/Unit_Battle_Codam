@@ -31,9 +31,13 @@ Error\n
 
 ## Rules
 Abide the rules of TDD at all times:
+
 You are not allowed to write any production code until you have first written a failing unit test.
+
 You are not allowed to write more of a unit test than is sufficient to fail– and not compiling is failing. 
+
 You are not allowed to write more production code that is sufficient to pass the currently failing unit test.
+
 You will work in a team of 2-4 people in which half of the team will write the FAILING UNITE TESTS and the other half of the team will write code that makes the tests pass. Good communication will be of the utmost importance!
 
 ## winning conditions
