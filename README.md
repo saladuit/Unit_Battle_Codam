@@ -75,7 +75,7 @@ Error
 ## Win Conditions
 The code has to take in 0-21 valid bowling scores and calculate the apropiate scores
 
-The code will be graded on a mix of coverage
+The code will be graded on a mix of the amount of % of coverage of your unit test, the amount of unit tests, the speed you completed the project and the cleanliness of your code base
 
 The projects with the best scores will be graded by nicolas and a winner will be picked
 
