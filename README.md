@@ -8,7 +8,7 @@
 * [License](#license)
 
 A Codam Coding College battle session
-[Frames](media/frames.png)
+![Frames](media/frames.png)
 ## Kata Description
 Write a program that can calculate the score of a bowlingame. 
 
