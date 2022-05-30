@@ -5,6 +5,8 @@
 * [Rules](#rules)
 * [Setup](#setup)
 * [Usage](#usage)
+* [Credits](#credits)
+* [Resources](#resources)
 * [License](#license)
 
 _A Codam Coding College unit battle session_
@@ -130,6 +132,13 @@ b main
 r
 gui
 ```
+## Credits
+[@PanoramixDeDruide](https://github.com/PanoramixDeDruide)
+## Resources
+[Uncle Bob](http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata)
+[Code Wars](https://www.codewars.com/)
+[Kenpugh](https://kenpugh.com/blog/another-way-to-look-at-the-bowling-acceptance-tests/)
+
 ## License
 The MIT License (MIT)
 
