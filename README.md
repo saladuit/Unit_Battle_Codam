@@ -133,13 +133,15 @@ r
 gui
 ```
 ## Credits
-[@PanoramixDeDruide](https://github.com/PanoramixDeDruide)
-[@lgutter](https://github.com/lgutter)
-[@FreekBes](https://github.com/FreekBes)
+
+* [@PanoramixDeDruide](https://github.com/PanoramixDeDruide) - for creating the acceptance test and the criterion installation
+* [@lgutter](https://github.com/lgutter) - for helping setting up the boiler plate code and thinking of the concept
+* [@FreekBes](https://github.com/FreekBes) - for trying to make criterion available throught the software manage center
+
 ## Resources
-[Uncle Bob](http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata)
-[Code Wars](https://www.codewars.com/)
-[Kenpugh](https://kenpugh.com/blog/another-way-to-look-at-the-bowling-acceptance-tests/)
+* [Uncle Bob](http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata)
+* [Code Wars](https://www.codewars.com/)
+* [Kenpugh](https://kenpugh.com/blog/another-way-to-look-at-the-bowling-acceptance-tests/)
 
 ## License
 The MIT License (MIT)
