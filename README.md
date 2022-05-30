@@ -139,9 +139,12 @@ gui
 * [@FreekBes](https://github.com/FreekBes) - for trying to make criterion available throught the software manage center
 
 ## Resources
+* [Eptiech 2022 Technical Doc](https://epitech-2022-technical-documentation.readthedocs.io/en/latest/makefiles.html#)
 * [Uncle Bob](http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata)
 * [Code Wars](https://www.codewars.com/)
 * [Kenpugh](https://kenpugh.com/blog/another-way-to-look-at-the-bowling-acceptance-tests/)
+* [Criterion](https://github.com/Snaipe/Criterion)
+* [Criterion Docs](https://criterion.readthedocs.io/en/master/)
 
 ## License
 The MIT License (MIT)
