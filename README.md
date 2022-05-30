@@ -40,7 +40,8 @@ All Gutter Balls
 ```console
 ./bowling_game 10 10 10 10 10 10 10 10 10 10 10 10; @echo Perfect Game
 300
-Perfect Game```
+Perfect Game
+```
 ```console
 ./bowling_game 9 1 9 1 9 1 9 1 9 1 9 1 9 1 9 1 9 1 9 1 9; @echo All Spares
 190
