@@ -86,8 +86,8 @@ re: fclean
 	$(MAKE)
 
 env:
-	export LIBRARY_PATH=/sgoinfre/criterion/lib:${LIBRARY_PATH}
-	export C_INCLUDE_PATH=/sgoinfre/criterion/include:${C_INCLUDE_PATH}
+	export LIBRARY_PATH=/sgoinfre/criterion_test/.brew/lib:${LIBRARY_PATH}
+	export C_INCLUDE_PATH=/sgoinfre/criterion_test/.brew/include:${C_INCLUDE_PATH}
 tests_run: CFLAGS += --coverage
 tests_run: $(OBJS) env
 	$(CC) $(CFLAGS) $(OBJS) $(addprefix $(UNIT_SRCS_DIR), $(UNIT_SRCS)) -o $(UNIT_TEST) $(UNIT_INCLUDE_FLAGS) $(UNIT_LFLAGS)
