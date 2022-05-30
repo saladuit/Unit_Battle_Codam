@@ -101,11 +101,11 @@ bash environment.sh
 ## Usage
 Compile the project
 ```console
-make;
+make
 ```
 Recompile the project
 ```console
-make re:	
+make re
 ```
 Remove all of the files.
 ```console
