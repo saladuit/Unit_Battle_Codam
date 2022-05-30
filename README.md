@@ -42,7 +42,9 @@ You will work in a team of 2-4 people in which half of the team will write the F
 
 ## winning conditions
 The code has to take in 0-21 valid bowling scores and calculate the apropiate scores
+
 The code will be graded on a mix of coverage
+
 The projects with the best scores will be graded by nicolas and a winner will be picked
 
 ## Usage
