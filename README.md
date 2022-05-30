@@ -107,10 +107,6 @@ Recompile the project
 ```console
 make re
 ```
-Remove all of the files.
-```console
-make fclean
-```
 Run all of the tests.
 ```console
 make tests_run
@@ -126,6 +122,13 @@ make fsan
 Compile a debuggable executable
 ```console
 make debug
+```
+Debug your program
+```console
+lldb bowling_game
+b main
+r
+gui
 ```
 ## License
 The MIT License (MIT)
