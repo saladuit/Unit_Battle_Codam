@@ -7,11 +7,11 @@
 * [Usage](#usage)
 * [License](#license)
 
-A Codam Coding College battle session
-![Frames](media/frames.png)
+_A Codam Coding College unit battle session_
+
 ## Kata Description
 Write a program that can calculate the score of a bowlingame. 
-
+![Frames](media/frames.png)
 The game consists of 10 frames.  In each frame the player has
 two opportunities to knock down 10 pins.  The score for the frame is the total
 number of pins knocked down, plus bonuses for strikes and spares.
@@ -36,15 +36,22 @@ The program should be called like this:
 ./bowling_game 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0; @echo All Gutter Balls
 0
 All Gutter Balls
+```
+```console
 ./bowling_game 10 10 10 10 10 10 10 10 10 10 10 10; @echo Perfect Game
 300
-Perfect Game
+Perfect Game```
+```console
 ./bowling_game 9 1 9 1 9 1 9 1 9 1 9 1 9 1 9 1 9 1 9 1 9; @echo All Spares
 190
 All Spares
+```
+```console
 ./bowling_game 9 0 9 0 9 0 9 0 9 0 9 0 9 0 9 0 9 0 9 0; @echo Nothing Special
 90
 Nothing Special
+```
+```console
 ./bowling_game 10 10 10 10 10 10 10 10 10 10 9 1; @echo Almost Perfect
 289
 Almost Perfect
@@ -53,8 +60,12 @@ Invalid input should display Error\n like this:
 ```console
 ./bowling_game a 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 Error\n
+```
+```console
 ./bowling_game -1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 Error\n
+```
+```console
 ./bowling_game 11 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 Error\n
 ```
