@@ -32,7 +32,6 @@ tenth frame.
 There can be one or two rolls in a Frame. If the first roll makes all the pins fall, then there is no second roll. There is a Mark for each Frame that depends on the number of rolls and the total pins.
 
 ## Examples
-The program should be called like this:
 ```console
 ./bowling_game 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0; @echo All Gutter Balls
 0
@@ -57,18 +56,18 @@ Nothing Special
 289
 Almost Perfect
 ```
-Invalid input should display Error\n like this:
+Invalid input should display Error
 ```console
 ./bowling_game a 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-Error\n
+Error
 ```
 ```console
 ./bowling_game -1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-Error\n
+Error
 ```
 ```console
 ./bowling_game 11 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-Error\n
+Error
 ```
 ## Win Conditions
 The code has to take in 0-21 valid bowling scores and calculate the apropiate scores
