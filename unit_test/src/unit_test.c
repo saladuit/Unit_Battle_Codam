@@ -6,7 +6,7 @@
 /*   By: safoh <safoh@student.codam.nl>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 16:46:15 by safoh             #+#    #+#             */
-/*   Updated: 2022/05/26 18:27:26 by safoh            ###   ########.fr       */
+/*   Updated: 2022/05/30 16:44:18 by safoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ double ft_pow(double x, double y)
 }
 Test(Example_Tests, should_pass_all_tests_provided)
 {
-	tester(1.0, 1.0, 1.0);
+	tester(1.0, 1.0, 2.0);
 }
 
 void	tester(double x, double y, double expected)

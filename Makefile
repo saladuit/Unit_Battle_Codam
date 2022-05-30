@@ -6,7 +6,7 @@
 #    By: saladuit <safoh@student.codam.nl>            +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/04/13 21:33:38 by saladuit      #+#    #+#                  #
-#    Updated: 2022/05/26 19:16:54 by safoh            ###   ########.fr        #
+#    Updated: 2022/05/30 18:34:32 by safoh            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,11 +48,11 @@ UNIT_SRCS_DIR		:=	$(UNIT_DIR)$(SRC_DIR)
 UNIT_OBJS			=	$(UNIT_SRCS:.c=.o)
 UNIT_INCLUDE_FLAGS	:=	$(addprefix -I, $(sort $(dir $(UNIT_HEADERS)))) $(INCLUDE_FLAGS)
 COVERAGE			=	$(SRCS:.c=.gcda)	\
-				$(SRCS:.c=.gcno)	\
-				$(MAIN:.c=.gcda)	\
-				$(MAIN:.c=.gcno)	\
-				$(UNIT_SRCS:.c=.gcno)	\
-				$(UNIT_SRCS:.c=.gcda)	\
+				$(SRCS:.c=$(BUILD_DIR).gcno)	\
+				$(MAIN:.c=$(BUILD_DIR).gcda)	\
+				$(MAIN:.c=$(BUILD_DIR).gcno)	\
+				$(UNIT_SRCS:.c=$(BUILD_DIR).gcno)	\
+				$(UNIT_SRCS:.c=$(BUILD_DIR).gcda)	\
 ################################################################################
 all: $(NAME)
 
@@ -92,6 +92,7 @@ tests_run: CFLAGS += --coverage
 tests_run: $(OBJS) env
 	$(CC) $(CFLAGS) $(OBJS) $(addprefix $(UNIT_SRCS_DIR), $(UNIT_SRCS)) -o $(UNIT_TEST) $(UNIT_INCLUDE_FLAGS) $(UNIT_LFLAGS)
 	./$(UNIT_TEST) -j0
+	gcov $(SRCS)
 
 coverage:
 	gcov $(SRCS)
