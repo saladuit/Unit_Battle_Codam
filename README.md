@@ -137,12 +137,13 @@ gui
 * [@PanoramixDeDruide](https://github.com/PanoramixDeDruide) - for creating the acceptance test and the criterion installation
 * [@lgutter](https://github.com/lgutter) - for helping setting up the boiler plate code and thinking of the concept
 * [@FreekBes](https://github.com/FreekBes) - for trying to make criterion available throught the software manage center
+* [Kenpugh](https://kenpugh.com/blog/another-way-to-look-at-the-bowling-acceptance-tests/)
+* [Uncle Bob](http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata)
+* [Code Wars](https://www.codewars.com/)
 
 ## Resources
 * [Eptiech 2022 Technical Doc](https://epitech-2022-technical-documentation.readthedocs.io/en/latest/makefiles.html#)
-* [Uncle Bob](http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata)
-* [Code Wars](https://www.codewars.com/)
-* [Kenpugh](https://kenpugh.com/blog/another-way-to-look-at-the-bowling-acceptance-tests/)
+* [Code Wars Criterion Docs](https://docs.codewars.com/languages/c/authoring#tests)
 * [Criterion](https://github.com/Snaipe/Criterion)
 * [Criterion Docs](https://criterion.readthedocs.io/en/master/)
 
