@@ -1,7 +1,17 @@
-# **Codam_Unit_Battle**
-A Codam Coding College battle session
+# **Table of Contents**
+* [Kata Description](#kata-description)
+* [Examples](#examples)
+* [Win Conditions](#win-conditions)
+* [Rules](#rules)
+* [Setup](#setup)
+* [Usage](#usage)
+* [License](#license)
 
-## Project Goal
+A Codam Coding College battle session
+[Frames](media/frames.png)
+## Kata Description
+Write a program that can calculate the score of a bowlingame. 
+
 The game consists of 10 frames.  In each frame the player has
 two opportunities to knock down 10 pins.  The score for the frame is the total
 number of pins knocked down, plus bonuses for strikes and spares.
@@ -18,16 +28,42 @@ In the tenth frame a player who rolls a spare or strike is allowed to roll the e
 balls to complete the frame.  However no more than three balls can be rolled in
 tenth frame.
 
-Write a program that can calculate the score of a bowlingame. The program should be called like this:
+There can be one or two rolls in a Frame. If the first roll makes all the pins fall, then there is no second roll. There is a Mark for each Frame that depends on the number of rolls and the total pins.
+
+## Examples
+The program should be called like this:
 ```console
-./bolwing_game 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-20
+./bowling_game 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0; @echo All Gutter Balls
+0
+All Gutter Balls
+./bowling_game 10 10 10 10 10 10 10 10 10 10 10 10; @echo Perfect Game
+300
+Perfect Game
+./bowling_game 9 1 9 1 9 1 9 1 9 1 9 1 9 1 9 1 9 1 9 1 9; @echo All Spares
+190
+All Spares
+./bowling_game 9 0 9 0 9 0 9 0 9 0 9 0 9 0 9 0 9 0 9 0; @echo Nothing Special
+90
+Nothing Special
+./bowling_game 10 10 10 10 10 10 10 10 10 10 9 1; @echo Almost Perfect
+289
+Almost Perfect
 ```
 Invalid input should display Error\n like this:
 ```console
-./bolwing_game a 100 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+./bowling_game a 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+Error\n
+./bowling_game -1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+Error\n
+./bowling_game 11 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 Error\n
 ```
+## Win Conditions
+The code has to take in 0-21 valid bowling scores and calculate the apropiate scores
+
+The code will be graded on a mix of coverage
+
+The projects with the best scores will be graded by nicolas and a winner will be picked
 
 ## Rules
 Abide the rules of TDD at all times:
@@ -38,14 +74,7 @@ You are not allowed to write more of a unit test than is sufficient to fail– a
 
 You are not allowed to write more production code that is sufficient to pass the currently failing unit test.
 
-You will work in a team of 2-4 people in which half of the team will write the FAILING UNITE TESTS and the other half of the team will write code that makes the tests pass. Good communication will be of the utmost importance!
-
-## winning conditions
-The code has to take in 0-21 valid bowling scores and calculate the apropiate scores
-
-The code will be graded on a mix of coverage
-
-The projects with the best scores will be graded by nicolas and a winner will be picked
+You will work in a team of 2-4 people in which half of the team will write the FAILING UNIT TESTS and the other half of the team will write PASSING CODE for those tests. Good communication will be of utmost importance!
 
 ## Setup
 Run the following command before starting your project or add these commands to your .zsh or .bashrc
