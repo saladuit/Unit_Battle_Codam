@@ -91,12 +91,12 @@ You will work in a team of 2-4 people in which half of the team will write the F
 ## Setup
 Run the following command before starting your project or add these commands to your .zsh or .bashrc
 ```console
-	export LIBRARY_PATH=/sgoinfre/criterion_test/.brew/lib:${LIBRARY_PATH}
-	export C_INCLUDE_PATH=/sgoinfre/criterion_test/.brew/include:${C_INCLUDE_PATH}
+export LIBRARY_PATH=/sgoinfre/criterion_test/.brew/lib:${LIBRARY_PATH}
+export C_INCLUDE_PATH=/sgoinfre/criterion_test/.brew/include:${C_INCLUDE_PATH}
 ```
 Alternatively run the bash script inside the folder
 ```console
-	bash environment.sh
+bash environment.sh
 ```
 ## Usage
 Compile the project
