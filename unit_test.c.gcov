@@ -1,0 +1,38 @@
+        -:    0:Source:unit_test/src/unit_test.c
+        -:    0:Graph:unit_test.gcno
+        -:    0:Data:unit_test.gcda
+        -:    0:Runs:8
+        -:    0:Programs:1
+        -:    1:/* ************************************************************************** */
+        -:    2:/*                                                                            */
+        -:    3:/*                                                        :::      ::::::::   */
+        -:    4:/*   unit_test.c                                        :+:      :+:    :+:   */
+        -:    5:/*                                                    +:+ +:+         +:+     */
+        -:    6:/*   By: safoh <safoh@student.codam.nl>             +#+  +:+       +#+        */
+        -:    7:/*                                                +#+#+#+#+#+   +#+           */
+        -:    8:/*   Created: 2022/05/26 16:46:15 by safoh             #+#    #+#             */
+        -:    9:/*   Updated: 2022/05/30 23:43:09 by safoh            ###   ########.fr       */
+        -:   10:/*                                                                            */
+        -:   11:/* ************************************************************************** */
+        -:   12:
+        -:   13:#include "unit_test.h"
+        -:   14:
+        -:   15:void	tester(double x, double y, double expected);
+        8:   16:double ft_pow(double x, double y)
+        -:   17:{
+        8:   18:	return (x * y);
+        -:   19:}
+        8:   20:Test(Example_Tests, should_pass_all_tests_provided)
+        -:   21:{
+        4:   22:	tester(1.0, 1.0, 1.0);
+        4:   23:}
+        -:   24:
+        4:   25:void	tester(double x, double y, double expected)
+        -:   26:{
+        -:   27:	double submitted;
+        4:   28:	submitted = ft_pow(x, y);
+        4:   29:	cr_assert(ft_pow(x, y) == expected,
+        -:   30:		"Submitted:\t%f for %f to the power of %f\nExpected:\t%f\n",
+        -:   31:		submitted, x, y, expected
+        -:   32:		);
+        2:   33:}

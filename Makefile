@@ -6,7 +6,7 @@
 #    By: saladuit <safoh@student.codam.nl>            +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/04/13 21:33:38 by saladuit      #+#    #+#                  #
-#    Updated: 2022/05/30 18:34:32 by safoh            ###   ########.fr        #
+#    Updated: 2022/05/30 23:50:23 by safoh            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ include makerc/colours.mk
 PROJECT				:=	Unit-Battle
 NAME				:=	bowling_game
 
-MAIN 				:= main.c
+MAIN 				:=	main.c
 SRCS				=
 UNIT_SRCS			=	unit_test.c
 
@@ -48,11 +48,11 @@ UNIT_SRCS_DIR		:=	$(UNIT_DIR)$(SRC_DIR)
 UNIT_OBJS			=	$(UNIT_SRCS:.c=.o)
 UNIT_INCLUDE_FLAGS	:=	$(addprefix -I, $(sort $(dir $(UNIT_HEADERS)))) $(INCLUDE_FLAGS)
 COVERAGE			=	$(SRCS:.c=.gcda)	\
-				$(SRCS:.c=$(BUILD_DIR).gcno)	\
-				$(MAIN:.c=$(BUILD_DIR).gcda)	\
-				$(MAIN:.c=$(BUILD_DIR).gcno)	\
-				$(UNIT_SRCS:.c=$(BUILD_DIR).gcno)	\
-				$(UNIT_SRCS:.c=$(BUILD_DIR).gcda)	\
+				$(SRCS:.c=.gcno)	\
+				$(MAIN:.c=.gcda)	\
+				$(MAIN:.c=.gcno)	\
+				$(UNIT_SRCS:.c=.gcno)	\
+				$(UNIT_SRCS:.c=.gcda)	\
 ################################################################################
 all: $(NAME)
 
@@ -85,19 +85,13 @@ fclean: clean
 re: fclean
 	$(MAKE)
 
-env:
-	export LIBRARY_PATH=/sgoinfre/criterion_test/.brew/lib:${LIBRARY_PATH}
-	export C_INCLUDE_PATH=/sgoinfre/criterion_test/.brew/include:${C_INCLUDE_PATH}
 tests_run: CFLAGS += --coverage
-tests_run: $(OBJS) env
+tests_run: $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) $(addprefix $(UNIT_SRCS_DIR), $(UNIT_SRCS)) -o $(UNIT_TEST) $(UNIT_INCLUDE_FLAGS) $(UNIT_LFLAGS)
 	./$(UNIT_TEST) -j0
-	gcov $(SRCS)
-
-coverage:
-	gcov $(SRCS)
+	gcov $(COVERAGE)
 
 re_tests: fclean
 	$(MAKE) tests_run
 
-.PHONY: all clean fclean re tests_run debug fsan coverage env
+.PHONY: all clean fclean re tests_run debug fsan coverage
