@@ -134,6 +134,8 @@ gui
 ```
 ## Credits
 [@PanoramixDeDruide](https://github.com/PanoramixDeDruide)
+[@lgutter](https://github.com/lgutter)
+[@FreekBes](https://github.com/FreekBes)
 ## Resources
 [Uncle Bob](http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata)
 [Code Wars](https://www.codewars.com/)
