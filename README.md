@@ -73,12 +73,15 @@ Error
 Error
 ```
 ## Win Conditions
-The code has to take in 0-21 valid bowling scores and calculate the apropiate scores
+The code has to take in 0-21 valid bowling scores and calculate the appropiate scores
 
 The code will be graded on a mix of the amount of % of coverage of your unit test, the amount of unit tests, the speed you completed the project and the cleanliness of your code base
 
 The projects with the best scores will be graded by nicolas and a winner will be picked
 
+**The solution must be turned in before 4:30!**
+
+After which we'll return to the auitorium
 ## Rules
 Abide the rules of TDD at all times:
 
@@ -88,7 +91,14 @@ You are not allowed to write more of a unit test than is sufficient to fail– a
 
 You are not allowed to write more production code that is sufficient to pass the currently failing unit test.
 
-You will work in a team of 2-4 people in which half of the team will write the FAILING UNIT TESTS and the other half of the team will write PASSING CODE for those tests. Good communication will be of utmost importance!
+
+You will work in a team of 4 people in which you will first decide how you are going to split the project into multiple components, after which you'll split the team into two pairs. Divide the components between the two pairs. You will alternate between navigating, writing a test case, and driving, making the test pass in the following cycle:
+* The first person will write a test case
+* The second person will make the test pass
+* The second person will make the next test case
+* The first person will make the test case pass
+* repeat!
+Good communication will be of utmost importance!
 
 ## Setup
 Run the following command before starting your project or add these commands to your .zsh or .bashrc
